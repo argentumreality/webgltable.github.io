@@ -54,7 +54,8 @@ const colors = [
     //glb: 'android/beds/glbs/RED.glb',
     //usdz: 'android/beds/glbs/RED2.usdz',
 }];
-
+var mixer;
+var clock = new THREE.Clock();
 
 const BACKGROUND_COLOR = 0x0A0A0A;
 // Init the scene
@@ -193,7 +194,8 @@ var loader = new THREE.GLTFLoader();
                    
 loader.load(MODEL_PATH, function (gltf) {
   theModel = gltf.scene;
-
+  mixer= new THREE.AnimationMixer(gltf.scene);
+    gltf.animations.forEach((clip) => {mixer.clipAction(clip).play(); });
   theModel.traverse(o => {
     if (o.isMesh) {
       o.castShadow = true;
@@ -305,7 +307,8 @@ function animate() {
   controls.update();
   renderer.render(scene, camera);
   requestAnimationFrame(animate);
-
+  var delta = clock.getDelta();
+mixer.update( delta )
   if (resizeRendererToDisplaySize(renderer)) {
     const canvas = renderer.domElement;
     camera.aspect = canvas.clientWidth / canvas.clientHeight;
