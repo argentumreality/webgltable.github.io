@@ -12,24 +12,16 @@
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"
     ></script>
     <!--<script src="jquery-min-1-10-2.js"></script>-->
-
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>OrigaMebel-Constructor</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Raleway:500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico">
     <!-- We add the loader CSS here so that assets don't pop in before the bundled CSS is loaded -->
     <style>
-        iframe#modviewer {
-          width: 50%;
-            top: 80%;
-            -webkit-border-radius: 20px;
-        -o-border-radius: 20px;
-            position: fixed;
-          height: 10%;
-            justify-content: center;
-        align-items: center;
-        }
+
     .loading {
         position: fixed;
         z-index: 50;
@@ -42,6 +34,8 @@
         justify-content: center;
         align-items: center;
     }
+
+    
 
     .loader {
         -webkit-perspective: 120px;
@@ -80,7 +74,27 @@
 
 </head>
 <body>
-    
+    <div class="arrow">
+        <span></span>
+        <span></span>
+        <span></span>
+
+</div>
+    <div class="contentT">
+        <div class="content__container">
+          <p class="content__container__text">
+            Умным
+          </p>
+          
+          <ul class="content__container__list">
+            <li class="content__container__list__item">столам !</li>
+            <li class="content__container__list__item">технологии !</li>
+            <li class="content__container__list__item">столам !</li>
+            <li class="content__container__list__item">технологии !</li>
+          </ul>
+        </div>
+      </div>
+    <!--<p id="title">Умным столам —<br> умные технологии</p>-->
     <!--<div class="loading" id="js-loader">
         <div class="loader"></div>
     </div>-->
