@@ -79,11 +79,11 @@ var camera, raycaster, stats;
 document.body.appendChild(renderer.domElement);
 
 // Add a camerra
-var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+var camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.z = cameraFar;
 camera.position.x = 0;
-camera.position.y = 8;
-camera.rotation.y = -50;
+camera.position.y = 1;
+camera.rotation.z = 20;
 
 setTimeout( function() {
     
@@ -103,18 +103,6 @@ setTimeout( function() {
   
   
   );
-gsap.to(camera.rotation, {
-      duration: 2,
-      x: deg(360),
-      y: deg(360),
-      repeat: -1,
-      ease: "none",
-      onUpdate: function () {
-    
-        camera.updateProjectionMatrix();
-      
-      }
-    });
   
 }, 1000 );
 function deg(degrees) {
